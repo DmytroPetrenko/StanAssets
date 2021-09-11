@@ -1,32 +1,37 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+	<div id="app">
+		<router-view />
+	</div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	.mr-24 {
+		margin-right: 24px;
+	}
+	.pb-16 {
+		padding-bottom: 16px;
+	}
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@font-face {
+	font-family: "Montserrat";
+	src: url("assets/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Harabara";
+	src: url("assets/fonts/Harabara/Harabara.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Open Sans";
+	src: url("assets/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
 }
 </style>

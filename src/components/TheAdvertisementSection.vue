@@ -1,0 +1,45 @@
+<template>
+	<div id="advertisement">
+		<h1 class="h1">looking for a partner in building a solution?</h1>
+		<p class="p">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, iste.
+		</p>
+		<base-button
+			backgroundColor="white"
+			border="2px solid #06B25F"
+			color="#06B25F"
+			>let`s talk</base-button
+		>
+	</div>
+</template>
+<style lang="scss" scoped>
+#advertisement {
+	background: url("~@/assets/advertisement_bg.png");
+	background-size: cover;
+	height: 640px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.h1 {
+		font-family: "Harabara";
+		font-style: normal;
+		font-weight: bold;
+		font-size: 44px;
+		line-height: 60px;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+
+		color: #ffffff;
+	}
+	.p {
+		font-family: "Montserrat";
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+
+		color: #ffffff;
+	}
+}
+</style>
