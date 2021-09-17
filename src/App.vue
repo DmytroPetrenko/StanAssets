@@ -15,6 +15,16 @@ body {
 	.pb-16 {
 		padding-bottom: 16px;
 	}
+	.mt-44 {
+		margin-top: 44px !important;
+	}
+	.mlr-120 {
+		margin: 0 120px;
+	}
+	.mtb-85 {
+		margin-top: 85px !important;
+		margin-bottom: 85px !important;
+	}
 }
 @font-face {
 	font-family: "Montserrat";

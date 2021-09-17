@@ -1,23 +1,38 @@
 <template>
-	<div class="menu">
+	<div class="menu" :class="{ light }">
 		<div class="logo">
-			<img :src="require('@/assets/logo.png')" />
+			<img :src="require(`@/assets/${logo}`)" />
 		</div>
-		<base-navigation :tabs="tabs" />
-		<base-button>Contact us</base-button>
+		<base-navigation :light="light" :tabs="all" />
+		<base-button
+			:color="light ? '#06B25F' : null"
+			:border="light ? '2px solid #06B25F' : null"
+			>Contact us</base-button
+		>
 	</div>
 </template>
 <script>
+import { mapState } from "vuex"
 export default {
 	props: {
-		tabs: {
-			type: Array,
-			required: true,
+		light: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		...mapState("pages", ["all"]),
+		logo() {
+			return this.light ? "logo_black.png" : "logo.png"
 		},
 	},
 }
 </script>
 <style lang="scss" scoped>
+.light {
+	background: white !important;
+	box-shadow: none !important;
+}
 .menu {
 	height: 80px;
 	padding: 0 120px;

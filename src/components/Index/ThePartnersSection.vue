@@ -49,6 +49,7 @@ export default {
 		margin: 0 120px;
 		display: flex;
 		flex-wrap: wrap;
+		width: 100%;
 	}
 }
 </style>

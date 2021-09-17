@@ -1,6 +1,6 @@
 <template>
 	<div id="home" :style="activeBackground">
-		<the-navigation :tabs="navigationTabs" />
+		<the-navigation />
 		<div class="main">
 			<div class="textblock">
 				<div class="text">
@@ -24,9 +24,7 @@
 					/>
 				</div>
 			</div>
-			<div class="social">
-				<base-links :icons="icons" />
-			</div>
+			<base-links />
 		</div>
 	</div>
 </template>
@@ -39,37 +37,6 @@ export default {
 	},
 	data() {
 		return {
-			icons: [
-				["fab", "facebook"],
-				["fab", "linkedin"],
-				["fab", "whatsapp"],
-				["fab", "skype"],
-			],
-			navigationTabs: [
-				{
-					id: 0,
-					name: "Services",
-					nestedTabs: [
-						"Game development",
-						"SDK development",
-						"3D modeling services",
-						"vr app development",
-					],
-				},
-				{
-					id: 1,
-					name: "Technologies",
-					nestedTabs: ["Android", "Ios", "Unity"],
-				},
-				{ id: 2, name: "Products", nestedTabs: null },
-				{ id: 3, name: "Portfolio", nestedTabs: null },
-				{ id: 4, name: "Blog", nestedTabs: null },
-				{
-					id: 5,
-					name: "About us",
-					nestedTabs: ["Contacts", "Team", "Join the team"],
-				},
-			],
 			activeBackgroundIndex: 1,
 		}
 	},
@@ -151,13 +118,6 @@ export default {
 			.button-block {
 				margin-top: 36px;
 			}
-		}
-
-		.social {
-			position: absolute;
-			right: 0;
-			align-self: center;
-			padding: 0;
 		}
 	}
 }

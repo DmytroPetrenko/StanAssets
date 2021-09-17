@@ -22,14 +22,14 @@
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste,
 				consectetur?
 			</p>
-			<the-technologies-section-clutch-review />
+			<clutch-review />
 		</div>
 	</div>
 </template>
 <script>
-import TheTechnologiesSectionClutchReview from "@/components/TheTechnologiesSectionClutchReview"
+import ClutchReview from "@/components/ClutchReview"
 export default {
-	components: { TheTechnologiesSectionClutchReview },
+	components: { ClutchReview },
 	data() {
 		return {
 			technologiesIcons: [

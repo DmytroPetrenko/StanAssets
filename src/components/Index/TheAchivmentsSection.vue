@@ -10,6 +10,7 @@
 				:backgroundImage="card.backgroundImage"
 				:boxShadow="cardBoxShadow"
 				:height="cardHeight"
+				justifyContent="flex-end"
 			/>
 		</div>
 	</div>
@@ -51,5 +52,6 @@ export default {
 .cards {
 	margin: 0 120px;
 	display: flex;
+	width: 100%;
 }
 </style>

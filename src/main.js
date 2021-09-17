@@ -9,6 +9,10 @@ import {
 	faPhoneSquare,
 	faEnvelope,
 	faMapMarkerAlt,
+	faChevronLeft,
+	faChevronRight,
+	faChevronDown,
+	faChevronUp,
 } from "@fortawesome/free-solid-svg-icons"
 import {
 	faFacebook,
@@ -26,7 +30,7 @@ import camelCase from "lodash/camelCase"
 
 const requireComponent = require.context(
 	// Относительный путь до каталога компонентов
-	"./components",
+	"./components/Base",
 	// Обрабатывать или нет подкаталоги
 	false,
 	// Регулярное выражение для определения файлов базовых компонентов
@@ -71,7 +75,11 @@ library.add(
 	faPhoneSquare,
 	faEnvelope,
 	faMapMarkerAlt,
-	faGithub
+	faGithub,
+	faChevronLeft,
+	faChevronRight,
+	faChevronDown,
+	faChevronUp
 )
 
 Vue.component("font-awesome-icon", FontAwesomeIcon)

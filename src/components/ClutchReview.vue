@@ -21,6 +21,7 @@
 	align-items: center;
 	padding: 33px;
 	box-sizing: border-box;
+	margin: auto;
 	.img-clutch {
 		width: 132px;
 	}

@@ -11,7 +11,7 @@
 	</div>
 </template>
 <script>
-import ServicesSectionItem from "@/components/ServicesSectionItem"
+import ServicesSectionItem from "@/components/Index/ServicesSectionItem"
 export default {
 	components: {
 		ServicesSectionItem,

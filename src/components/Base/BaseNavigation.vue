@@ -1,12 +1,12 @@
 <template>
-	<ul class="tabs">
+	<ul class="tabs" :class="{ light }">
 		<li
 			v-for="tab in tabs"
 			:key="tab.id"
 			class="tab"
-			@click="openNestedTab(tab)"
+			@click="openNestedTab(tab), changePage(tab)"
 		>
-			{{ tab.name }}
+			{{ tab.text }}
 			<font-awesome-icon
 				v-if="tab.nestedTabs"
 				:icon="['fas', 'angle-down']"
@@ -15,10 +15,11 @@
 			<ul v-if="tab.nestedTabs" class="nestedTabs" :class="isActive(tab.id)">
 				<li
 					v-for="nestedTab in tab.nestedTabs"
-					:key="nestedTab"
+					:key="nestedTab.text"
+					@click="changePage({ name: tab.name, params: nestedTab.name })"
 					class="nestedTab"
 				>
-					{{ nestedTab }}
+					{{ nestedTab.text }}
 				</li>
 			</ul>
 		</li>
@@ -30,6 +31,10 @@ export default {
 		tabs: {
 			type: Array,
 			required: true,
+		},
+		light: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	data() {
@@ -50,10 +55,28 @@ export default {
 					: (this.activeTabId = null)
 			}
 		},
+		changePage(data) {
+			if (data.params) {
+				this.$router.push({ name: data.name, params: { id: data.params } })
+			} else {
+				if (!data.nestedTabs) {
+					this.$router.push({ name: data.name })
+				}
+			}
+		},
 	},
 }
 </script>
 <style lang="scss" scoped>
+.light {
+	.tab {
+		color: #0d6eb7 !important;
+		.nestedTabs {
+			background: white !important;
+			box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.4) !important;
+		}
+	}
+}
 .active {
 	display: block !important;
 }
@@ -101,6 +124,7 @@ export default {
 			.nestedTab {
 				white-space: nowrap;
 				padding: 5px 16px 0;
+				cursor: pointer;
 			}
 		}
 	}

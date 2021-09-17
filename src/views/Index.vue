@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import TheHomeSection from "@/components/TheHomeSection.vue"
-import TheTechnologiesSection from "@/components/TheTechnologiesSection.vue"
-import TheServicesSection from "@/components/TheServicesSection.vue"
+import TheHomeSection from "@/components/Index/TheHomeSection.vue"
+import TheTechnologiesSection from "@/components/Index/TheTechnologiesSection.vue"
+import TheServicesSection from "@/components/Index/TheServicesSection.vue"
 import TheAdvertisementSection from "@/components/TheAdvertisementSection.vue"
-import TheAchivmentsSection from "@/components/TheAchivmentsSection.vue"
-import ThePartnersSection from "@/components/ThePartnersSection.vue"
+import TheAchivmentsSection from "@/components/Index/TheAchivmentsSection.vue"
+import ThePartnersSection from "@/components/Index/ThePartnersSection.vue"
 import TheContactsSection from "@/components/TheContactsSection.vue"
 import FooterSection from "@/components/FooterSection.vue"
 
