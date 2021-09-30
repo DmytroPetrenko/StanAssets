@@ -1,29 +1,15 @@
 <template>
-	<div class="technologies">{{ page.name }}</div>
+  <services-technologies :section="routeNames.technologies" />
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex"
-import routeNames from "@/router/routeNames.js"
+import routeNames from "@/router/routeNames.js";
+import ServicesTechnologies from "@/components/Other/ServicesTechnologies";
 export default {
-	computed: {
-		...mapGetters("pages", ["getActivePage", "getAllPossiblePages"]),
-		page() {
-			return this.getActivePage
-		},
-	},
-	created() {
-		if (
-			this.getAllPossiblePages(routeNames.technologies).find(
-				(page) => page === this.$route.params.id
-			)
-		) {
-			this.setActivePage(this.$route.params.id)
-		} else {
-			this.$router.replace({ name: routeNames.notFound })
-		}
-	},
-	methods: {
-		...mapActions("pages", ["setActivePage"]),
-	},
-}
+  components: { ServicesTechnologies },
+  computed: {
+    routeNames() {
+      return routeNames;
+    },
+  },
+};
 </script>

@@ -3,6 +3,7 @@ import App from "./App.vue"
 import router from "./router"
 import store from "./store"
 import { library } from "@fortawesome/fontawesome-svg-core"
+import { faStar as faStarReg } from "@fortawesome/free-regular-svg-icons"
 import {
 	faAngleDown,
 	faPhone,
@@ -13,6 +14,12 @@ import {
 	faChevronRight,
 	faChevronDown,
 	faChevronUp,
+	faStar,
+	faClock,
+	faEye,
+	faShareAlt,
+	faTimes,
+	faBars,
 } from "@fortawesome/free-solid-svg-icons"
 import {
 	faFacebook,
@@ -79,7 +86,14 @@ library.add(
 	faChevronLeft,
 	faChevronRight,
 	faChevronDown,
-	faChevronUp
+	faChevronUp,
+	faStar,
+	faClock,
+	faEye,
+	faShareAlt,
+	faStarReg,
+	faTimes,
+	faBars
 )
 
 Vue.component("font-awesome-icon", FontAwesomeIcon)

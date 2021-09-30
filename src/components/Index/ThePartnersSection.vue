@@ -6,9 +6,7 @@
 				v-for="card in cards"
 				:key="card.id"
 				:image="card.image"
-				:height="cardHeight"
-				:boxShadow="cardBoxShadow"
-				:background="cardBackground"
+				class="base-card"
 			/>
 		</div>
 	</div>
@@ -17,9 +15,6 @@
 export default {
 	data() {
 		return {
-			cardHeight: "160px",
-			cardBoxShadow: "0px 3px 16px 4px rgba(29, 51, 107, 0.1)",
-			cardBackground: "white",
 			cards: [
 				{ id: 1, image: "partner1.png" },
 				{ id: 2, image: "partner2.png" },
@@ -46,10 +41,43 @@ export default {
 	background-size: 100% 100%;
 	padding: 100px 0;
 	.cards {
-		margin: 0 120px;
+		padding: 0 120px;
+		box-sizing: border-box;
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
+		.base-card::v-deep {
+			flex-grow: 1;
+			height: 160px;
+			box-shadow: 0px 3px 16px 4px rgba(29, 51, 107, 0.1);
+			background: white;
+			width: 20%;
+			max-width: 280px;
+			.image-wrapper {
+				margin: auto;
+				.image {
+					max-width: none;
+					height: auto;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 496px) {
+		.cards {
+			padding: 0 5px;
+			.base-card::v-deep {
+				width: 34%;
+				height: 75px !important;
+				.image-wrapper {
+					max-width: 100%;
+					max-height: 100%;
+					.image {
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+			}
+		}
 	}
 }
 </style>

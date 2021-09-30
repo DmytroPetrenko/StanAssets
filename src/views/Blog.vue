@@ -1,21 +1,15 @@
 <template>
-	<div class="blog">{{ page.name }}</div>
+  <services-technologies :section="routeNames.blog" blog />
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex"
-import routeNames from "@/router/routeNames.js"
+import routeNames from "@/router/routeNames.js";
+import ServicesTechnologies from "@/components/Other/ServicesTechnologies";
 export default {
-	computed: {
-		...mapGetters("pages", ["getActivePage", "getAllPossiblePages"]),
-		page() {
-			return this.getActivePage
-		},
-	},
-	created() {
-		this.setActivePage(routeNames.blog)
-	},
-	methods: {
-		...mapActions("pages", ["setActivePage"]),
-	},
-}
+  components: { ServicesTechnologies },
+  computed: {
+    routeNames() {
+      return routeNames;
+    },
+  },
+};
 </script>

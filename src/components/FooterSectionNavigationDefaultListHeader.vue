@@ -1,5 +1,5 @@
 <template>
-	<h6 class="h6"><slot></slot></h6>
+	<h6 class="h6"><slot /></h6>
 </template>
 <style lang="scss" scoped>
 .h6 {

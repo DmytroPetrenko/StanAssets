@@ -31,5 +31,8 @@ export default {
 <style lang="scss" scoped>
 #services {
 	margin: 50px 235px;
+	@media screen and (max-width: 496px) {
+		margin: 50px 0;
+	}
 }
 </style>

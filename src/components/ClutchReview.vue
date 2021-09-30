@@ -2,17 +2,17 @@
 	<div class="clutch-review">
 		<img :src="require('@/assets/clutch.png')" class="img-clutch" />
 		<div class="ratio">
-			4,5
-			<img :src="require('@/assets/clutch_stars.png')" class="img-stars" /> 2
-			reviews
+			<p class="p">4,5</p>
+			<img :src="require('@/assets/clutch_stars.png')" class="img-stars" />
+			<p class="p">2 reviews</p>
 		</div>
 		<base-button background-color="#06B25F">Check out reviews</base-button>
 	</div>
 </template>
 <style lang="scss" scoped>
 .clutch-review {
-	width: 900px;
-	height: 200px;
+	width: 100%;
+	min-height: 200px;
 	background: #ffffff;
 	box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
 	border-radius: 16px;
@@ -22,11 +22,13 @@
 	padding: 33px;
 	box-sizing: border-box;
 	margin: auto;
+
 	.img-clutch {
 		width: 132px;
 	}
 	.ratio {
 		display: flex;
+		flex-wrap: nowrap;
 		align-items: center;
 		font-family: "Montserrat";
 		font-style: normal;
@@ -37,6 +39,16 @@
 		.img-stars {
 			padding: 0 10px;
 		}
+		.p {
+			white-space: nowrap;
+		}
+	}
+
+	@media screen and (max-width: 496px) {
+		width: auto;
+		max-width: 100%;
+		flex-direction: column;
+		margin: 0 30px;
 	}
 }
 </style>

@@ -1,8 +1,14 @@
 <template>
 	<ul class="breadcrumbs">
-		<li @click="changePage" class="clicked breadcrumb">home</li>
+		<li @click="goHomePage" class="clicked breadcrumb">home</li>
 		<li v-for="item in breadcrumbsItems" :key="item" class="breadcrumb">
-			&nbsp;> {{ item }}
+			<span
+				v-if="item"
+				@click="goParentPage(item)"
+				class="breadcrumb-item-wrapper"
+			>
+				&nbsp;> {{ item }}
+			</span>
 		</li>
 	</ul>
 </template>
@@ -24,8 +30,16 @@ export default {
 		},
 	},
 	methods: {
-		changePage() {
+		goHomePage() {
 			this.$router.push({ name: routeNames.index })
+		},
+		goParentPage(parent) {
+			if (this.page.name === "Blog" && parent === "Blog") {
+				this.$router.push({ name: routeNames.blog })
+			}
+			if (parent === "Team") {
+				this.$router.push({ name: routeNames.about, params: { id: "team" } })
+			}
 		},
 	},
 }
@@ -43,6 +57,12 @@ export default {
 	line-height: 26px;
 	color: #194484;
 	text-transform: capitalize;
+	@media screen and (max-width: 496px) {
+		flex-wrap: wrap;
+	}
+	.breadcrumb {
+		white-space: nowrap;
+	}
 	.clicked {
 		cursor: pointer;
 	}

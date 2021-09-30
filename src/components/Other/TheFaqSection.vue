@@ -3,7 +3,11 @@
 		<base-subheader>faq`s</base-subheader>
 		<div class="questions-list-wrapper mlr-120">
 			<div class="icon-container">
-				<font-awesome-icon :icon="['fas', 'chevron-left']" class="icon-left" />
+				<font-awesome-icon
+					:icon="['fas', 'chevron-left']"
+					ref="iconLeft"
+					class="icon-left"
+				/>
 			</div>
 			<ul class="qustions-list">
 				<li v-for="question in questions" :key="question.id" class="question">
@@ -13,11 +17,12 @@
 			<div class="icon-container">
 				<font-awesome-icon
 					:icon="['fas', 'chevron-right']"
+					ref="iconRight"
 					class="icon-right"
 				/>
 			</div>
 		</div>
-		<div class="questions-detalization">
+		<div class="questions-detalization plrm-30">
 			<faq-section-question-item
 				v-for="question in questions"
 				:key="question.id"
@@ -35,6 +40,10 @@ export default {
 	computed: {
 		...mapState("questions", ["questions"]),
 	},
+	mounted() {
+		this.$refs.iconLeft.setAttribute("preserveAspectRatio", "none")
+		this.$refs.iconRight.setAttribute("preserveAspectRatio", "none")
+	},
 }
 </script>
 <style lang="scss" scoped>
@@ -43,9 +52,6 @@ export default {
 		display: flex;
 		justify-content: center;
 		.icon-container {
-			flex-basis: 10%;
-
-			align-self: stretch;
 			position: relative;
 			color: #66d6a0;
 			.icon-left {
@@ -53,7 +59,6 @@ export default {
 				left: 0;
 				top: 0;
 				line-height: 0;
-				width: 100%;
 				height: 100%;
 				fill: black;
 			}
@@ -62,13 +67,12 @@ export default {
 				left: 0px;
 				top: 0;
 				line-height: 0;
-				width: 100%;
 				height: 100%;
 				fill: black;
 			}
 		}
 		.qustions-list {
-			flex-basis: 80%;
+			width: 100%;
 			.question {
 				font-family: "Montserrat";
 				font-style: normal;
@@ -81,6 +85,18 @@ export default {
 	}
 	.questions-detalization {
 		margin: 60px 0;
+	}
+
+	@media screen and (max-width: 496px) {
+		.questions-list-wrapper {
+      padding: 0 5px;
+			.qustions-list {
+				.question {
+					font-size: 18px;
+					line-height: 28px;
+				}
+			}
+		}
 	}
 }
 </style>

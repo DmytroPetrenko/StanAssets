@@ -1,13 +1,14 @@
 <template>
-	<div class="social">
+	<div class="social mobile-disable">
 		<div class="links">
-			<div v-for="(icon, index) in icons" :key="index" class="link_wrapper">
-				<font-awesome-icon :icon="icon" />
+			<div v-for="icon in iconsWithIds" :key="icon.id" class="link_wrapper">
+				<font-awesome-icon :icon="icon.icon" />
 			</div>
 		</div>
 	</div>
 </template>
 <script>
+import { v4 as uuidv4 } from "uuid"
 export default {
 	data() {
 		return {
@@ -18,6 +19,13 @@ export default {
 				["fab", "skype"],
 			],
 		}
+	},
+	computed: {
+		iconsWithIds() {
+			return this.icons.map((iconArr) => {
+				return { id: uuidv4(), icon: iconArr }
+			})
+		},
 	},
 }
 </script>

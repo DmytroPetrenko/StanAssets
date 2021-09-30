@@ -6,7 +6,7 @@
 			class="slider-button"
 			:class="isActive(index)"
 			@click="changeActiveSlide(index)"
-		></div>
+		/>
 	</div>
 </template>
 <script>
@@ -43,6 +43,7 @@ export default {
 		border: 3px solid #ffffff;
 		box-sizing: border-box;
 		margin: 10px;
+		cursor: pointer;
 	}
 }
 </style>

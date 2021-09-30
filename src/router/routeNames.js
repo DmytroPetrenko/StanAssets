@@ -5,6 +5,11 @@ export default {
 	products: "Products",
 	portfolio: "Portfolio",
 	blog: "Blog",
+	article: "Article",
 	about: "About",
+	team: "Team",
+	contacts: "Contacts",
+	join: "Join",
+	author: "Author",
 	notFound: "NotFound",
 }

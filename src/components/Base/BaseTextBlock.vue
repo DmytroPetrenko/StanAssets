@@ -45,5 +45,15 @@ export default {
 		color: #242424;
 		margin: 0;
 	}
+	@media screen and (max-width: 496px) {
+		.h3 {
+			font-size: 20px;
+			line-height: 38px;
+		}
+		.p {
+			font-size: 16px;
+			line-height: 26px;
+		}
+	}
 }
 </style>

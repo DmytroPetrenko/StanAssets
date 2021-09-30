@@ -2,21 +2,20 @@
 	<div id="achivments">
 		<base-subheader>achivments</base-subheader>
 		<div class="cards">
-			<base-card
+			<achivments-section-card
 				v-for="card in cards"
 				:key="card.id"
-				:text="card.text"
-				:background="cardBackground"
-				:backgroundImage="card.backgroundImage"
-				:boxShadow="cardBoxShadow"
-				:height="cardHeight"
-				justifyContent="flex-end"
+				:card="card"
 			/>
 		</div>
 	</div>
 </template>
 <script>
+import AchivmentsSectionCard from "@/components/Index/AchivmentsSectionCard"
 export default {
+	components: {
+		AchivmentsSectionCard,
+	},
 	data() {
 		return {
 			cardHeight: "400px",
@@ -49,9 +48,18 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.cards {
+#achivments {
 	margin: 0 120px;
-	display: flex;
-	width: 100%;
+	.cards {
+		display: flex;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 496px) {
+		margin: 0 5px;
+		.cards {
+			flex-direction: column;
+		}
+	}
 }
 </style>

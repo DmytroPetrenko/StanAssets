@@ -1,5 +1,5 @@
 <template>
-	<button class="btn" :style="customStyle"><slot></slot></button>
+	<button class="btn" :style="customStyle"><slot /></button>
 </template>
 <script>
 export default {
@@ -73,5 +73,9 @@ export default {
 	text-transform: uppercase;
 	padding: 0 25px;
 	min-width: 160px;
+	@media screen and (max-width: 496px) {
+		padding: 0;
+		min-width: none;
+	}
 }
 </style>

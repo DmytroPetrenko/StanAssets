@@ -1,5 +1,6 @@
 <template>
 	<form class="form" id="contactForm" autocomplete="off" novalidate>
+		<slot/>
 		<fieldset class="fieldset">
 			<input placeholder="Name" type="text" class="input-text" />
 		</fieldset>

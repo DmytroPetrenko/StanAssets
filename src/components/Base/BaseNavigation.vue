@@ -10,7 +10,7 @@
 			<font-awesome-icon
 				v-if="tab.nestedTabs"
 				:icon="['fas', 'angle-down']"
-				class="icon"
+				class="icon mobile-disable"
 			/>
 			<ul v-if="tab.nestedTabs" class="nestedTabs" :class="isActive(tab.id)">
 				<li
@@ -49,7 +49,7 @@ export default {
 	},
 	methods: {
 		openNestedTab(tab) {
-			if (tab.nestedTabs) {
+			if (tab.nestedTabs && window.innerWidth > 496) {
 				tab.id !== this.activeTabId
 					? (this.activeTabId = tab.id)
 					: (this.activeTabId = null)
@@ -63,6 +63,7 @@ export default {
 					this.$router.push({ name: data.name })
 				}
 			}
+			this.$emit("pageChanged")
 		},
 	},
 }
@@ -125,6 +126,37 @@ export default {
 				white-space: nowrap;
 				padding: 5px 16px 0;
 				cursor: pointer;
+			}
+		}
+	}
+}
+@media screen and (max-width: 496px) {
+	.tabs {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.tab {
+			color: #0d6eb7;
+			font-size: 14px;
+			line-height: 18px;
+			flex-direction: column;
+			align-items: flex-start;
+			margin: 10px;
+			.nestedTabs {
+				display: block !important;
+				position: inherit;
+				top: 0;
+				border-top: none;
+				box-shadow: none !important;
+				background: none !important;
+				.nestedTab {
+					white-space: normal;
+					float: left;
+					width: 100%;
+					height: auto;
+					word-wrap: break-word;
+					margin: 10px;
+				}
 			}
 		}
 	}

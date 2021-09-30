@@ -41,5 +41,20 @@
 
 		color: #ffffff;
 	}
+	@media screen and (max-width: 496px) {
+		text-align: center;
+		padding: 0 5px;
+		height: 380px;
+		.h1 {
+			margin: 0;
+			font-size: 24px;
+			line-height: 38px;
+		}
+		.p {
+			margin: 5px 0;
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
 }
 </style>

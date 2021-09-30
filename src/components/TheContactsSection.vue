@@ -1,5 +1,5 @@
 <template>
-	<div id="contacts">
+	<div id="contacts" class="plrm-30">
 		<base-subheader>contacts</base-subheader>
 		<h6 class="h6">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dicta!
@@ -87,6 +87,26 @@ export default {
 				url("~@/assets/contacts_bg2.png"), url("~@/assets/contacts_bg3.png");
 			background-repeat: no-repeat, no-repeat, no-repeat;
 			background-position: top left, bottom left, top right;
+		}
+	}
+	@media screen and (max-width: 496px) {
+		padding: 0;
+		.h6 {
+			font-size: 18px;
+			line-height: 28px;
+			font-weight: bold;
+		}
+		.p {
+			font-size: 16px;
+			line-height: 26px;
+		}
+
+		.contact-block {
+			flex-direction: column;
+			.contact-block-form {
+				padding: 0;
+				background: none;
+			}
 		}
 	}
 }

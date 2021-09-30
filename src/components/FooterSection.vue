@@ -6,32 +6,37 @@
 
 				<div class="social-icons">
 					<font-awesome-icon
-						v-for="(icon, index) in icons"
-						:key="index"
-						:icon="icon"
+						v-for="icon in iconsWithIds"
+						:key="icon.id"
+						:icon="icon.icon"
+						class="icon"
 					/>
 				</div>
 			</div>
 			<footer-section-navigation-default-list
 				:tabs="servicesTabs"
 				headerText="Services"
+				class="background-color plr-5"
 			/>
 			<footer-section-navigation-default-list
 				:tabs="technologiesTabs"
 				headerText="Technologies"
+				class="background-color plr-5"
 			/>
-			<div class="products-list">
+			<div class="products-list background-color plr-5 plrm-30">
 				<footer-section-navigation-default-list-header
 					v-for="tab in productTabs"
-					:key="tab"
-					class="pb-16"
+					:key="tab.name"
+					class="active-header pb-16"
+					@click.native="changePage(tab)"
 				>
-					{{ tab }}
+					{{ tab.text }}
 				</footer-section-navigation-default-list-header>
 			</div>
 			<footer-section-navigation-default-list
 				:tabs="aboutUsTabs"
 				headerText="About us"
+				class="background-color plr-5"
 			/>
 		</div>
 		<div class="footer-copyright-group">
@@ -39,8 +44,8 @@
 				© {{ year }} Stan`s Assets. All right reserved
 			</div>
 			<div class="footer-policies">
-				<div class="privacy">Privacy policy</div>
-				<div class="cookies">Cookies policy</div>
+				<div class="privacy footer-policies-item">Privacy policy</div>
+				<div class="cookies footer-policies-item">Cookies policy</div>
 			</div>
 		</div>
 	</div>
@@ -48,7 +53,8 @@
 <script>
 import FooterSectionNavigationDefaultList from "@/components/FooterSectionNavigationDefaultList"
 import FooterSectionNavigationDefaultListHeader from "@/components/FooterSectionNavigationDefaultListHeader"
-
+import { v4 as uuidv4 } from "uuid"
+import { mapState } from "vuex"
 export default {
 	components: {
 		FooterSectionNavigationDefaultList,
@@ -56,17 +62,6 @@ export default {
 	},
 	data() {
 		return {
-			servicesTabs: [
-				"Mobile Application Development",
-				"Game Development Outsourcing",
-				"VR App Development",
-				"Dedicated Developers",
-				"SDK Development",
-				"3D Modeling services",
-			],
-			technologiesTabs: ["Android", "IOS", "Unity"],
-			productTabs: ["Products", "Portfolio", "Blog"],
-			aboutUsTabs: ["Contacts", "Team", "Join the Team"],
 			icons: [
 				["fab", "facebook"],
 				["fab", "linkedin"],
@@ -79,6 +74,29 @@ export default {
 	computed: {
 		year() {
 			return new Date().getFullYear()
+		},
+		iconsWithIds() {
+			return this.icons.map((iconArr) => {
+				return { id: uuidv4(), icon: iconArr }
+			})
+		},
+		...mapState("pages", ["all"]),
+		servicesTabs() {
+			return this.all.find((page) => page.name == "Services").nestedTabs
+		},
+		technologiesTabs() {
+			return this.all.find((page) => page.name == "Technologies").nestedTabs
+		},
+		productTabs() {
+			return this.all.filter((page) => !page.nestedTabs)
+		},
+		aboutUsTabs() {
+			return this.all.find((page) => page.name == "About").nestedTabs
+		},
+	},
+	methods: {
+		changePage(data) {
+			this.$router.push({ name: data.name })
 		},
 	},
 }
@@ -110,9 +128,15 @@ export default {
 				font-size: 40px;
 				display: flex;
 				flex-wrap: wrap;
-				svg {
+				.icon {
 					padding: 22px;
+					cursor: pointer;
 				}
+			}
+		}
+		.products-list {
+			.active-header {
+				cursor: pointer;
 			}
 		}
 	}
@@ -135,6 +159,51 @@ export default {
 			flex: 1 1 0;
 			display: flex;
 			justify-content: space-around;
+		}
+	}
+	@media screen and (max-width: 496px) {
+		height: auto;
+		background-size: 100% auto;
+
+		.footer-information-group {
+			flex-direction: column;
+			padding: 0;
+			.footer-logos {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 100px;
+				background: #194484;
+
+				.logo {
+					height: 50px;
+					width: 200px;
+				}
+				.social-icons {
+					max-width: 100% !important;
+					.icon {
+						font-size: 32px;
+					}
+				}
+			}
+			.pb-16 {
+				padding-bottom: 16px;
+			}
+			.background-color {
+				background: #194484;
+			}
+		}
+
+		.footer-copyright-group {
+			flex-direction: column-reverse;
+			padding: 0;
+			.footer-policies {
+				flex-direction: row;
+				align-items: center;
+				.footer-policies-item {
+					flex: 0 0 100%;
+				}
+			}
 		}
 	}
 }

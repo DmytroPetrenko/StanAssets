@@ -1,6 +1,6 @@
 <template>
-	<div class="services-item">
-		<div v-if="!(itemIndex % 2)" class="imageRight">
+	<div class="services-item" :class="{ portfolio }">
+		<div v-if="isTextFirst" class="imageRight">
 			<base-text-block :header="header" />
 			<div class="image-wrapper">
 				<img v-if="image" :src="require(`@/assets/${image}`)" class="image" />
@@ -15,9 +15,7 @@
 	</div>
 </template>
 <script>
-import BaseTextBlock from "../Base/BaseTextBlock.vue"
 export default {
-	components: { BaseTextBlock },
 	props: {
 		itemIndex: {
 			type: Number,
@@ -31,10 +29,28 @@ export default {
 			type: String,
 			default: null,
 		},
+		portfolio: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		isTextFirst() {
+			if (window.innerWidth > 496) {
+				if (!(this.itemIndex % 2)) return true
+				return false
+			}
+			return true
+		},
 	},
 }
 </script>
 <style lang="scss" scoped>
+.portfolio {
+	box-shadow: 0px 3px 16px rgba(29, 51, 107, 0.15);
+	border-radius: 12px;
+	margin: 40px 0;
+}
 .services-item > div {
 	display: flex;
 	align-items: center;
@@ -45,6 +61,11 @@ export default {
 		.image {
 			max-width: 100%;
 		}
+	}
+
+	@media screen and (max-width: 496px) {
+		flex-direction: column;
+		text-align: center;
 	}
 }
 </style>

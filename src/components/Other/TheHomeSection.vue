@@ -3,19 +3,12 @@
 		<div class="row">
 			<div class="text-block">
 				<base-breadcrumbs :page="page" class="mt-44" />
-				<h1 class="h1">{{ page.text }}</h1>
+				<h1 class="h1" :class="{ 'mtb-40': blog }">{{ page.text }}</h1>
 			</div>
-			<div class="image-block">
-				<img :src="require(`@/assets/${page.image}`)" />
+			<div v-if="page.image" class="image-block">
+				<img :src="require(`@/assets/${page.image}`)" class="image" />
 			</div>
 			<base-links />
-		</div>
-		<div class="row">
-			<base-text-block
-				v-for="index in 2"
-				:key="index"
-				:header="`Header ${index}`"
-			/>
 		</div>
 	</div>
 </template>
@@ -25,6 +18,10 @@ export default {
 		page: {
 			type: Object,
 			required: true,
+		},
+		blog: {
+			type: Boolean,
+			default: false,
 		},
 	},
 }
@@ -50,6 +47,25 @@ export default {
 		}
 		.image-block {
 			flex: 1 1 0;
+		}
+	}
+	@media screen and (max-width: 496px) {
+		padding: 0 30px;
+		.row {
+			flex-direction: column;
+			.text-block {
+				.h1 {
+					text-align: center;
+					font-size: 24px;
+					line-height: 38px;
+					margin: 30px 0;
+				}
+			}
+			.image-block {
+				.image {
+					max-width: 100%;
+				}
+			}
 		}
 	}
 }

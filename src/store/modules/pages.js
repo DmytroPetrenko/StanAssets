@@ -11,6 +11,7 @@ const state = () => ({
 					image: "services_mobile.png",
 					imageSm: "services_mobile_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 				{
 					name: "game",
@@ -18,6 +19,7 @@ const state = () => ({
 					image: "services_game.png",
 					imageSm: "services_game_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 				{
 					name: "vr",
@@ -32,6 +34,7 @@ const state = () => ({
 					image: "services_dedicated.png",
 					imageSm: "services_dedicated_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 				{
 					name: "sdk",
@@ -39,6 +42,7 @@ const state = () => ({
 					image: "services_sdk.svg",
 					imageSm: "services_sdk_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 				{
 					name: "3d",
@@ -46,6 +50,7 @@ const state = () => ({
 					image: "services_3d.png",
 					imageSm: "services_3d_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 				{
 					name: "ar",
@@ -53,6 +58,7 @@ const state = () => ({
 					image: "services_ar.png",
 					imageSm: "services_ar_sm.png",
 					parentText: "Services",
+					parentName: "Services",
 				},
 			],
 		},
@@ -64,17 +70,23 @@ const state = () => ({
 				{
 					name: "android",
 					text: "Android",
+					image: "android.png",
 					parentText: "Technologies",
+					parentName: "Technologies",
 				},
 				{
 					name: "ios",
 					text: "Ios",
+					image: "ios.png",
 					parentText: "Technologies",
+					parentName: "Technologies",
 				},
 				{
 					name: "unity",
 					text: "Unity",
+					image: "unity.png",
 					parentText: "Technologies",
+					parentName: "Technologies",
 				},
 			],
 		},
@@ -82,12 +94,14 @@ const state = () => ({
 			id: 2,
 			text: "Products",
 			name: "Products",
+			image: "products.png",
 			nestedTabs: null,
 		},
 		{
 			id: 3,
 			text: "Portfolio",
 			name: "Portfolio",
+			image: "portfolio.png",
 			nestedTabs: null,
 		},
 		{
@@ -105,16 +119,20 @@ const state = () => ({
 					name: "contacts",
 					text: "Contacts",
 					parentText: "About us",
+					parentName: "About",
 				},
 				{
 					name: "team",
 					text: "Team",
 					parentText: "About us",
+					parentName: "About",
 				},
 				{
 					name: "join",
 					text: "Join the team",
+					image: "join.png",
 					parentText: "About us",
+					parentName: "About",
 				},
 			],
 		},
@@ -133,13 +151,16 @@ const getters = {
 	},
 	getAllPossiblePages: (state) => (sectionName) => {
 		const names = []
-		JSON.stringify(
-			state.all.find((page) => page.name === sectionName).nestedTabs,
-			(key, value) => {
+		const page = state.all.find((page) => page.name === sectionName)
+
+		if (page.nestedTabs) {
+			JSON.stringify(page.nestedTabs, (key, value) => {
 				if (key === "name") names.push(value)
 				return value
-			}
-		)
+			})
+		} else {
+			names.push(page.name)
+		}
 		return names
 	},
 	getActiveNestedArray: (state) => (sectionName) => {

@@ -40,5 +40,14 @@ export default {
 		padding: 5px;
 		margin: 0;
 	}
+	@media screen and (max-width: 496px) {
+		svg {
+			font-size: 14px;
+		}
+		.p {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
 }
 </style>

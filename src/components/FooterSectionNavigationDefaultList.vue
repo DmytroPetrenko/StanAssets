@@ -1,10 +1,17 @@
 <template>
-	<div class="navigation-list">
+	<div class="navigation-list plrm-30">
 		<footer-section-navigation-default-list-header>{{
 			headerText
 		}}</footer-section-navigation-default-list-header>
 		<ul class="tabs">
-			<li v-for="tab in tabs" :key="tab" class="tab">{{ tab }}</li>
+			<li
+				v-for="tab in tabs"
+				:key="tab.name"
+				class="tab"
+				@click="changePage(tab)"
+			>
+				{{ tab.text }}
+			</li>
 		</ul>
 	</div>
 </template>
@@ -20,6 +27,11 @@ export default {
 		headerText: {
 			type: String,
 			default: "Lorem",
+		},
+	},
+	methods: {
+		changePage(data) {
+			this.$router.push({ name: data.parentName, params: { id: data.name } })
 		},
 	},
 }
@@ -38,6 +50,7 @@ export default {
 			font-size: 16px;
 			line-height: 34px;
 			color: #ffffff;
+			cursor: pointer;
 		}
 	}
 }
