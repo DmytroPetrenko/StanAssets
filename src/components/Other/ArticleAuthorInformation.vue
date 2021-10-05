@@ -18,7 +18,7 @@
 <script>
 import { mapGetters } from "vuex"
 import AuthorNameAndSocial from "@/components/Other/AuthorNameAndSocial"
-import utils from "@/utils/utils"
+import { getAuthorFullName } from "@/utils/stringFormatters"
 export default {
 	components: { AuthorNameAndSocial },
 	props: {
@@ -33,7 +33,7 @@ export default {
 			return this.getAuthorById(this.authorId)
 		},
 		authorFullName() {
-			return utils.getAuthorFullName(this.author.name, this.author.surname)
+			return getAuthorFullName(this.author.name, this.author.surname)
 		},
 	},
 }

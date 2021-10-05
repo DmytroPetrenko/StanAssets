@@ -43,7 +43,7 @@ import TheNavigation from "@/components/TheNavigation"
 import AuthorNameAndSocial from "@/components/Other/AuthorNameAndSocial"
 import TheAdvertisementSection from "@/components/TheAdvertisementSection"
 import TheRecentArticlesSection from "@/components/Other/TheRecentArticlesSection"
-
+import { getAuthorFullName } from "@/utils/stringFormatters"
 import { mapGetters } from "vuex"
 import FooterSection from "@/components/FooterSection.vue"
 export default {
@@ -60,7 +60,7 @@ export default {
 			return this.getAuthorById(this.$route.params.id)
 		},
 		authorFullName() {
-			return this.author.name + " " + this.author.surname
+			return getAuthorFullName(this.author.name, this.author.surname)
 		},
 	},
 }
