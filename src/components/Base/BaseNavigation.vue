@@ -4,7 +4,7 @@
 			v-for="tab in tabs"
 			:key="tab.id"
 			class="tab"
-			@click="openNestedTab(tab), changePage(tab)"
+			@click="tabClickHandler(tab)"
 		>
 			{{ tab.text }}
 			<font-awesome-icon
@@ -48,6 +48,10 @@ export default {
 		},
 	},
 	methods: {
+		tabClickHandler(tab) {
+			this.openNestedTab(tab)
+			this.changePage(tab)
+		},
 		openNestedTab(tab) {
 			if (tab.nestedTabs && window.innerWidth > 496) {
 				tab.id !== this.activeTabId

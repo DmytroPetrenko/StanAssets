@@ -1,8 +1,8 @@
 <template>
-	<h6 class="h6"><slot /></h6>
+	<h6 class="header"><slot /></h6>
 </template>
 <style lang="scss" scoped>
-.h6 {
+.header {
 	font-family: "Harabara";
 	font-style: normal;
 	font-weight: bold;

@@ -29,8 +29,9 @@
 				color="#06B25F"
 				border="2px solid #06B25F"
 				class="mobile-button"
-				>Contact us</base-button
 			>
+				Contact us
+			</base-button>
 		</div>
 	</div>
 </template>

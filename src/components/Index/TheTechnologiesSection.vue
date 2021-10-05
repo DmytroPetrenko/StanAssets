@@ -21,13 +21,10 @@
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste,
 			consectetur?
 		</p>
-		<clutch-review />
 	</div>
 </template>
 <script>
-import ClutchReview from "@/components/ClutchReview"
 export default {
-	components: { ClutchReview },
 	data() {
 		return {
 			technologiesIcons: [

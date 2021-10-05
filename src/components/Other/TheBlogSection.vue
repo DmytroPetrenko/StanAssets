@@ -46,7 +46,7 @@ export default {
 			this.lastActivePost = this.postsOnPage * pageIndex
 		},
 		goToArticle(id) {
-			this.$router.push({ name: routeNames.article, params: { id: id } })
+			this.$router.push({ name: routeNames.article, params: { id } })
 		},
 	},
 }

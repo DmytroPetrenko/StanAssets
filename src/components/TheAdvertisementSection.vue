@@ -1,14 +1,16 @@
 <template>
 	<div id="advertisement">
-		<h1 class="h1">looking for a partner in building a solution?</h1>
-		<p class="p">
+		<h1 class="header">looking for a partner in building a solution?</h1>
+		<p class="text">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, iste.
 		</p>
 		<base-button
 			backgroundColor="white"
 			border="2px solid #06B25F"
 			color="#06B25F"
-			>let`s talk</base-button
+			>
+			let`s talk
+			</base-button
 		>
 	</div>
 </template>
@@ -21,7 +23,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	.h1 {
+	.header {
 		font-family: "Harabara";
 		font-style: normal;
 		font-weight: bold;
@@ -32,7 +34,7 @@
 
 		color: #ffffff;
 	}
-	.p {
+	.text {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: normal;
@@ -45,12 +47,12 @@
 		text-align: center;
 		padding: 0 5px;
 		height: 380px;
-		.h1 {
+		.header {
 			margin: 0;
 			font-size: 24px;
 			line-height: 38px;
 		}
-		.p {
+		.text {
 			margin: 5px 0;
 			font-size: 16px;
 			line-height: 20px;

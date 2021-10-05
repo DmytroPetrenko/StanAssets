@@ -104,7 +104,7 @@ export default {
 						display: flex;
 						justify-content: space-between;
 
-						.h6 {
+						.header {
 							font-family: "Harabara";
 							font-style: normal;
 							font-weight: bold;

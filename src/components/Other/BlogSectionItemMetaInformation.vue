@@ -9,6 +9,8 @@
 </template>
 <script>
 import { mapGetters } from "vuex"
+import utils from "@/utils/utils"
+
 export default {
 	props: {
 		post: {
@@ -22,7 +24,7 @@ export default {
 			return this.getAuthorById(this.post.authorId)
 		},
 		authorFullName() {
-			return this.author.name + " " + this.author.surname
+			return utils.getAuthorFullName(this.author.name, this.author.surname)
 		},
 		createdDate() {
 			const year = this.post.createdDate.getFullYear()

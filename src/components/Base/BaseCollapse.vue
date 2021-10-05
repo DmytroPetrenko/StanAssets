@@ -4,7 +4,7 @@
 			<font-awesome-icon :icon="['fas', icon]" @click="collapse" class="icon" />
 			<div class="text-block">
 				<div @click.prevent="collapse" class="header-block">
-					<h6 class="h6">
+					<h6 class="header">
 						{{ header }}
 					</h6>
 					<slot name="header-extension" />
@@ -61,7 +61,7 @@ export default {
 			cursor: pointer;
 		}
 		.text-block {
-			.h6 {
+			.header {
 				font-family: "Montserrat";
 				font-style: normal;
 				font-weight: bold;
@@ -87,7 +87,7 @@ export default {
 	@media screen and (max-width: 496px) {
 		.header {
 			.text-block {
-				.h6 {
+				.header {
 					font-size: 18px;
 					line-height: 28px;
 				}

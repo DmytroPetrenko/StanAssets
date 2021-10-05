@@ -3,9 +3,9 @@
 		<font-awesome-icon
 			:icon="['fas', 'times']"
 			class="icon"
-			@click="changePopupStatus"
+			@click="this.isPopupOpen = !this.isPopupOpen"
 		/>
-		<slot/>
+		<slot />
 	</div>
 </template>
 <script>
@@ -14,11 +14,6 @@ export default {
 		return {
 			isPopupOpen: false,
 		}
-	},
-	methods: {
-		changePopupStatus() {
-			this.isPopupOpen = !this.isPopupOpen
-		},
 	},
 }
 </script>

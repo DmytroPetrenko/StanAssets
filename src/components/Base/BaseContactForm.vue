@@ -1,6 +1,6 @@
 <template>
 	<form class="form" id="contactForm" autocomplete="off" novalidate>
-		<slot/>
+		<slot />
 		<fieldset class="fieldset">
 			<input placeholder="Name" type="text" class="input-text" />
 		</fieldset>
@@ -21,8 +21,9 @@
 				backgroundColor="#2DA531"
 				width="100%"
 				style="margin: 20px 10px"
-				>Send request</base-button
 			>
+				Send request
+			</base-button>
 		</fieldset>
 	</form>
 </template>

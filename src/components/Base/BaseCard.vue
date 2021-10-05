@@ -5,8 +5,8 @@
 			<img v-if="image" :src="require(`@/assets/${image}`)" class="image" />
 		</div>
 		<slot name="metaInfo" />
-		<h3 v-if="header" class="h3">{{ header }}</h3>
-		<p v-if="text" class="p">{{ text }}</p>
+		<h3 v-if="header" class="header">{{ header }}</h3>
+		<p v-if="text" class="text">{{ text }}</p>
 	</div>
 </template>
 <script>
@@ -39,7 +39,7 @@ export default {
 	position: relative;
 	max-width: 25%;
 	margin: 10px;
-	.h3 {
+	.header {
 		font-family: "Harabara";
 		font-style: normal;
 		font-weight: bold;
@@ -54,7 +54,7 @@ export default {
 		padding: 0 16px;
 		text-align: center;
 	}
-	.p {
+	.text {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: normal;
@@ -74,11 +74,11 @@ export default {
 		max-width: 100% !important;
 		height: 400px !important;
 
-		.h3 {
+		.header {
 			font-size: 18px;
 			line-height: 38px;
 		}
-		.p {
+		.text {
 			font-size: 16px;
 			line-height: 26px;
 		}

@@ -1,10 +1,10 @@
 <template>
 	<div id="contacts" class="plrm-30">
 		<base-subheader>contacts</base-subheader>
-		<h6 class="h6">
+		<h6 class="header">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur, dicta!
 		</h6>
-		<p class="p">
+		<p class="text">
 			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, mollitia!
 		</p>
 		<div class="contact-block">
@@ -52,7 +52,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	.h6 {
+	.header {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: bold;
@@ -62,7 +62,7 @@ export default {
 		color: #242424;
 		margin: 0;
 	}
-	.p {
+	.text {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: normal;
@@ -91,12 +91,12 @@ export default {
 	}
 	@media screen and (max-width: 496px) {
 		padding: 0;
-		.h6 {
+		.header {
 			font-size: 18px;
 			line-height: 28px;
 			font-weight: bold;
 		}
-		.p {
+		.text {
 			font-size: 16px;
 			line-height: 26px;
 		}

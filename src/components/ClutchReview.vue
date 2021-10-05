@@ -2,16 +2,15 @@
 	<div class="clutch-review">
 		<img :src="require('@/assets/clutch.png')" class="img-clutch" />
 		<div class="ratio">
-			<p class="p">4,5</p>
+			<p class="text">4,5</p>
 			<img :src="require('@/assets/clutch_stars.png')" class="img-stars" />
-			<p class="p">2 reviews</p>
+			<p class="text">2 reviews</p>
 		</div>
 		<base-button background-color="#06B25F">Check out reviews</base-button>
 	</div>
 </template>
 <style lang="scss" scoped>
 .clutch-review {
-	width: 100%;
 	min-height: 200px;
 	background: #ffffff;
 	box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
@@ -39,7 +38,7 @@
 		.img-stars {
 			padding: 0 10px;
 		}
-		.p {
+		.text {
 			white-space: nowrap;
 		}
 	}

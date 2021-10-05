@@ -1,7 +1,7 @@
 <template>
 	<div class="text-block">
-		<h3 class="h3">{{ header }}</h3>
-		<p class="p">
+		<h3 class="header">{{ header }}</h3>
+		<p class="text">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eius
 			eaque inventore voluptas accusamus at laborum tempore numquam vero quasi,
 			repudiandae nulla veniam. Maxime aspernatur nam neque inventore rerum, rem
@@ -25,7 +25,7 @@ export default {
 .text-block {
 	flex: 1 1 0;
 	padding: 10px;
-	.h3 {
+	.header {
 		font-family: "Harabara";
 		font-style: normal;
 		font-weight: bold;
@@ -36,7 +36,7 @@ export default {
 		color: #0d6eb7;
 		margin: 0;
 	}
-	.p {
+	.text {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: normal;
@@ -46,11 +46,11 @@ export default {
 		margin: 0;
 	}
 	@media screen and (max-width: 496px) {
-		.h3 {
+		.header {
 			font-size: 20px;
 			line-height: 38px;
 		}
-		.p {
+		.text {
 			font-size: 16px;
 			line-height: 26px;
 		}

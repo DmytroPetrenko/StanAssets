@@ -1,7 +1,7 @@
 <template>
 	<div class="text-block-item">
 		<font-awesome-icon v-if="icon" :icon="icon" class="icon" />
-		<p class="p">{{ text }}</p>
+		<p class="text">{{ text }}</p>
 	</div>
 </template>
 <script>
@@ -27,7 +27,7 @@ export default {
 		color: #276ed8;
 		font-size: 18px;
 	}
-	.p {
+	.text {
 		font-family: "Montserrat";
 		font-style: normal;
 		font-weight: normal;
@@ -44,7 +44,7 @@ export default {
 		svg {
 			font-size: 14px;
 		}
-		.p {
+		.text {
 			font-size: 20px;
 			line-height: 30px;
 		}

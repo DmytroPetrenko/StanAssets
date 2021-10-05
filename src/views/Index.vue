@@ -9,6 +9,7 @@
 			Sequi!
 		</div>
 		<the-technologies-section class="plrm-30" />
+		<clutch-review class="mlr-120" />
 		<the-services-section class="plrm-30" />
 		<the-advertisement-section class="plrm-30" />
 		<the-achivments-section class="plrm-30" />
@@ -27,6 +28,7 @@ import TheAchivmentsSection from "@/components/Index/TheAchivmentsSection.vue"
 import ThePartnersSection from "@/components/Index/ThePartnersSection.vue"
 import TheContactsSection from "@/components/TheContactsSection.vue"
 import FooterSection from "@/components/FooterSection.vue"
+import ClutchReview from "@/components/ClutchReview"
 
 export default {
 	name: "Index",
@@ -39,6 +41,7 @@ export default {
 		ThePartnersSection,
 		TheContactsSection,
 		FooterSection,
+		ClutchReview,
 	},
 }
 </script>

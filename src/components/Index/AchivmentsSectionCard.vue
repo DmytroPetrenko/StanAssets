@@ -27,7 +27,7 @@ export default {
 	background: rgba(39, 110, 216, 0.05) no-repeat;
 	background-size: 100% auto;
 	box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
-	p {
+	.text {
 		padding-top: 300px !important;
 	}
 }

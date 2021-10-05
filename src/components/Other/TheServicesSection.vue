@@ -51,7 +51,7 @@ export default {
 				}
 			}
 
-			.p {
+			.text {
 				height: 52px;
 			}
 		}
@@ -65,7 +65,7 @@ export default {
 				margin: 20px 10px;
 				flex: 1;
 				height: auto !important;
-				.p {
+				.text {
 					margin: 10px 0;
 					height: auto;
 				}

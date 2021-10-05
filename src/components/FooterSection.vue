@@ -107,7 +107,7 @@ export default {
 }
 #footer {
 	background: url(~@/assets/footer_bg1.png), url(~@/assets/footer_bg2.png);
-	background-size: auto 100%;
+	background-size: 100vw auto;
 	height: 600px;
 	display: flex;
 	flex-direction: column;

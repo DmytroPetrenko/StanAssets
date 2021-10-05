@@ -8,6 +8,11 @@
 				:image="card.image"
 				class="base-card"
 			/>
+			<div
+				v-for="index in 3"
+				:key="`${index}empty`"
+				class="filling-empty-space-childs"
+			></div>
 		</div>
 	</div>
 </template>
@@ -42,17 +47,14 @@ export default {
 	padding: 100px 0;
 	.cards {
 		padding: 0 120px;
-		box-sizing: border-box;
 		display: flex;
 		flex-wrap: wrap;
-		width: 100%;
 		.base-card::v-deep {
-			flex-grow: 1;
+			flex: 1 0 20%;
 			height: 160px;
 			box-shadow: 0px 3px 16px 4px rgba(29, 51, 107, 0.1);
 			background: white;
-			width: 20%;
-			max-width: 280px;
+			max-width: none;
 			.image-wrapper {
 				margin: auto;
 				.image {
@@ -61,12 +63,18 @@ export default {
 				}
 			}
 		}
+		.filling-empty-space-childs {
+			flex: 1 0 20%;
+			margin: 0 10px;
+			height: 0;
+		}
 	}
 	@media screen and (max-width: 496px) {
 		.cards {
 			padding: 0 5px;
 			.base-card::v-deep {
-				width: 34%;
+				flex: 1 0 34%;
+
 				height: 75px !important;
 				.image-wrapper {
 					max-width: 100%;

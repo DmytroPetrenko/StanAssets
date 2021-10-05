@@ -12,7 +12,10 @@
 		<the-products-section v-if="products" />
 		<the-portfolio-section v-if="portfolio" />
 		<the-blog-section v-if="blog" />
-		<clutch-review v-if="!products && !portfolio && !blog" class="mtb-85" />
+		<clutch-review
+			v-if="!products && !portfolio && !blog"
+			class="mtb-85 mlr-120"
+		/>
 		<the-services-section v-if="!products && !portfolio && !blog" />
 		<the-advertisement-section v-if="!blog" />
 		<div v-if="!products && !portfolio && !blog" class="row mlr-120 plrm-30">

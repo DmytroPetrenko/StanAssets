@@ -2,7 +2,7 @@
 	<base-popup ref="basePopup">
 		<template>
 			<form class="form" id="contactForm" autocomplete="off" novalidate>
-				<div class="h3">Join the team</div>
+				<div class="header">Join the team</div>
 				<p class="text">{{ position }}</p>
 				<fieldset class="fieldset">
 					<input placeholder="Full Name" type="text" class="input-text" />
@@ -46,7 +46,9 @@
 						width="100%"
 						style="margin: 20px"
 						@click.native.prevent="changePopupStatus"
-						>Submit</base-button
+						>
+						Submit
+						</base-button
 					>
 				</fieldset>
 			</form>
@@ -91,7 +93,7 @@ export default {
 	top: 15%;
 	left: 33%;
 	padding: 20px;
-	.h3 {
+	.header {
 		font-family: "Harabara";
 		font-style: normal;
 		font-weight: bold;

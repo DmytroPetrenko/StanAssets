@@ -37,8 +37,7 @@ export default {
 	computed: {
 		isTextFirst() {
 			if (window.innerWidth > 496) {
-				if (!(this.itemIndex % 2)) return true
-				return false
+				if (this.itemIndex % 2) return false
 			}
 			return true
 		},
